@@ -48,7 +48,7 @@ const Footer = () => {
           © {new Date().getFullYear()} Aaqib Javaid.
           All rights reserved.
         </div>
-
+            {/* footer */}
       </div>
     </footer>
   );
