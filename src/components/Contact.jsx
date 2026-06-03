@@ -8,6 +8,9 @@ import emailjs from "@emailjs/browser";
 import toast from "react-hot-toast";
 import { MdEmail } from "react-icons/md";
 
+
+
+
 const Contact = () => {
   const form = useRef();
   const sendEmail = async (e) => {
@@ -15,10 +18,10 @@ const Contact = () => {
 
     try {
       await emailjs.sendForm(
-        "service_vnmd9wf",
-        "template_1w8hnxy",
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
         form.current,
-        "hbCjdBUBy-auYQJih",
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
       );
 
       toast.success("Message sent successfully 🚀");
