@@ -49,7 +49,6 @@ const projects = [
     technologies: [
       "React.js",
       "Tailwind CSS",
-      "React Query",
       "Axios",
     ],
 
