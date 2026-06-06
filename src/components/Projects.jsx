@@ -4,24 +4,7 @@ import {
 } from "react-icons/fa";
 
 const projects = [
-  {
-    title: "Tradesposter",
-    description:
-      "A contractor marketplace platform built using React.js. Features dashboards, API integrations, reusable components, authentication flows and responsive design.",
-    image:
-      "https://images.unsplash.com/photo-1460925895917-afdab827c52f",
-
-    technologies: [
-      "React.js",
-      "Tailwind CSS",
-      "React Query",
-      "Axios",
-    ],
-
-  
-    live: "https://dev.tradesposter.com/",
-  },
-
+ 
   {
     title: "Freddy's Moving Services",
     description:
@@ -41,7 +24,7 @@ const projects = [
   },
 
   {
-    title: "Iyrix Client Projects",
+    title: "Iyrix Tech",
     description:
       "Collection of client-facing websites and web applications built during my tenure as a Software Engineer.",
     image:
@@ -56,6 +39,23 @@ const projects = [
     
     live: "https://iyrix.com/",
   },
+   {
+    title: "Tradesposter",
+    description:
+      "A contractor marketplace platform built using React.js. Features dashboards, API integrations, reusable components, authentication flows and responsive design.",
+    image:
+      "https://images.unsplash.com/photo-1460925895917-afdab827c52f",
+
+    technologies: [
+      "React.js",
+      "Tailwind CSS",
+      "React Query",
+      "Axios",
+    ],
+
+  
+    live: "https://dev.tradesposter.com/",
+  }
 ];
 
 const Projects = () => {

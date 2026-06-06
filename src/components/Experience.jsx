@@ -28,6 +28,20 @@ const experiences = [
     ],
     tech: ["HTML5", "CSS3", "JavaScript", "Bootstrap", "SEO",],
   },
+  {
+  company: "Freddy's Moving Services",
+  role: "Frontend Developer",
+  period: "2022",
+  description:
+    "Developed a responsive business website from Figma designs, focusing on user experience, mobile responsiveness, and reusable UI components.",
+  achievements: [
+    "Converted Figma designs into pixel-perfect web pages",
+    "Built responsive layouts for desktop, tablet, and mobile devices",
+    "Created reusable UI components for maintainability",
+    "Improved website performance and user experience",
+  ],
+  tech: ["HTML5", "CSS3", "JavaScript", "Bootstrap", "Figma"],
+},
 ];
 
 const Experience = () => {
