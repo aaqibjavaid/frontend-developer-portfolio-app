@@ -3,36 +3,36 @@ import {
   FaLinkedin,
   FaWhatsapp,
 } from "react-icons/fa";
-import { useRef } from "react";
-import emailjs from "@emailjs/browser";
-import toast from "react-hot-toast";
+// import { useRef } from "react";
+// import emailjs from "@emailjs/browser";
+// import toast from "react-hot-toast";
 import { MdEmail } from "react-icons/md";
 
 
 
 
 const Contact = () => {
-  const form = useRef();
-  const sendEmail = async (e) => {
-    e.preventDefault();
+  // const form = useRef();
+  // const sendEmail = async (e) => {
+  //   e.preventDefault();
 
-    try {
-      await emailjs.sendForm(
-        import.meta.env.VITE_EMAILJS_SERVICE_ID,
-        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-        form.current,
-        import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
-      );
+  //   try {
+  //     await emailjs.sendForm(
+  //       import.meta.env.VITE_EMAILJS_SERVICE_ID,
+  //       import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+  //       form.current,
+  //       import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
+  //     );
 
-      toast.success("Message sent successfully 🚀");
+  //     toast.success("Message sent successfully 🚀");
 
-      form.current.reset();
-    } catch (error) {
-      console.error(error);
+  //     form.current.reset();
+  //   } catch (error) {
+  //     console.error(error);
 
-      toast.error("Failed to send message ❌");
-    }
-  };
+  //     toast.error("Failed to send message ❌");
+  //   }
+  // };
   return (
     <section id="contact" className="relative py-28 overflow-hidden">
       {/* Glow Effects */}
@@ -54,7 +54,7 @@ const Contact = () => {
           </h2>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12">
+        <div className="gap-12">
           {/* Left Side */}
 
           <div>
@@ -146,7 +146,7 @@ const Contact = () => {
 
           {/* Right Side Form */}
 
-          <div
+          {/* <div
             className="
               bg-slate-900/60
               backdrop-blur-xl
@@ -232,7 +232,7 @@ const Contact = () => {
                 Send Message
               </button>
             </form>
-          </div>
+          </div> */}
         </div>
       </div>
     </section>
