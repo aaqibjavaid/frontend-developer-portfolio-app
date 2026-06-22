@@ -1,0 +1,22 @@
+{
+  "name": "Aaqib Javaid | Frontend Developer",
+  "short_name": "Aaqib Javaid",
+  "description": "Frontend Developer Portfolio - React.js, JavaScript, Tailwind CSS",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#050816",
+  "theme_color": "#050816",
+  "icons": [
+    {
+      "src": "/favicon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

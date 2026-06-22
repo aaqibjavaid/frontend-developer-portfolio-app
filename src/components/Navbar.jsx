@@ -18,22 +18,22 @@ const Navbar = () => {
       {/* Blur Layer */}
       <div className="absolute inset-0 backdrop-blur-xl bg-slate-950/60 border-b border-white/5" />
 
-      <nav className="relative max-w-7xl mx-auto px-6 lg:px-8">
+      <nav aria-label="Main navigation" className="relative max-w-7xl mx-auto px-6 lg:px-8">
         <div className="h-20 flex items-center justify-between">
           {/* Logo */}
-          <a href="#home" className="flex items-center gap-3">
+          <a href="#home" className="flex items-center gap-3" aria-label="Aaqib Javaid - Home">
             <div className="relative">
-              <div className="absolute inset-0 bg-purple-500 blur-xl opacity-50" />
+              <div className="absolute inset-0 bg-purple-500 blur-xl opacity-50" aria-hidden="true" />
               <img
                 src="/favicon.png"
-                alt="Frontend Developer"
+                alt=""
+                aria-hidden="true"
                 className="w-10 h-10 rounded-xl relative z-10"
               />
             </div>
 
             <div>
-              <h2 className="font-bold text-lg">Aaqib Javaid</h2>
-
+              <p className="font-bold text-lg">Aaqib Javaid</p>
               <p className="text-xs text-slate-400">React Developer</p>
             </div>
           </a>
@@ -47,8 +47,7 @@ const Navbar = () => {
                 className="text-slate-300 hover:text-white transition-all duration-300 relative group"
               >
                 {item.name}
-
-                <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-gradient-to-r from-purple-500 to-blue-500 transition-all duration-300 group-hover:w-full" />
+                <span aria-hidden="true" className="absolute left-0 -bottom-1 w-0 h-[2px] bg-gradient-to-r from-purple-500 to-blue-500 transition-all duration-300 group-hover:w-full" />
               </a>
             ))}
           </div>
@@ -64,14 +63,18 @@ const Navbar = () => {
           {/* Mobile Button */}
           <button
             onClick={() => setMenuOpen(!menuOpen)}
+            aria-label={menuOpen ? "Close navigation menu" : "Open navigation menu"}
+            aria-expanded={menuOpen}
+            aria-controls="mobile-menu"
             className="md:hidden text-white text-3xl"
           >
-            {menuOpen ? <HiX /> : <HiMenuAlt3 />}
+            {menuOpen ? <HiX aria-hidden="true" /> : <HiMenuAlt3 aria-hidden="true" />}
           </button>
         </div>
 
         {/* Mobile Menu */}
         <div
+          id="mobile-menu"
           className={`md:hidden overflow-hidden transition-all duration-300 ${
             menuOpen ? "max-h-[500px] pb-6" : "max-h-0"
           }`}

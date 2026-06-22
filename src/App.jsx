@@ -11,12 +11,14 @@ function App() {
   return (
     <div className="bg-[#050816] text-white overflow-hidden">
       <Navbar />
-      <Hero />
-      <About />
-      <Skills />
-      <Experience />
-      <Projects />
-      <Contact />
+      <main id="main-content">
+        <Hero />
+        <About />
+        <Skills />
+        <Experience />
+        <Projects />
+        <Contact />
+      </main>
       <Footer />
     </div>
   );

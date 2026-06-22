@@ -18,68 +18,26 @@ const skillGroups = [
   {
     title: "Frontend Development",
     skills: [
-      {
-        name: "React.js",
-        level: 90,
-        icon: <FaReact />,
-      },
-      {
-        name: "JavaScript",
-        level: 85,
-        icon: <SiJavascript />,
-      },
-      {
-        name: "Tailwind CSS",
-        level: 90,
-        icon: <SiTailwindcss />,
-      },
-      {
-        name: "Next.js",
-        level: 75,
-        icon: <SiNextdotjs />,
-      },
+      { name: "React.js", level: 90, icon: <FaReact aria-hidden="true" /> },
+      { name: "JavaScript", level: 85, icon: <SiJavascript aria-hidden="true" /> },
+      { name: "Tailwind CSS", level: 90, icon: <SiTailwindcss aria-hidden="true" /> },
+      { name: "Next.js", level: 75, icon: <SiNextdotjs aria-hidden="true" /> },
     ],
   },
-
   {
     title: "Libraries & Tools",
     skills: [
-      {
-        name: "React Query",
-        level: 80,
-        icon: <SiReactquery />,
-      },
-      {
-        name: "Axios",
-        level: 90,
-        icon: <SiAxios />,
-      },
-      {
-        name: "Git",
-        level: 85,
-        icon: <FaGitAlt />,
-      },
-      {
-        name: "TypeScript",
-        level: 65,
-        icon: <SiTypescript />,
-      },
+      { name: "React Query", level: 80, icon: <SiReactquery aria-hidden="true" /> },
+      { name: "Axios", level: 90, icon: <SiAxios aria-hidden="true" /> },
+      { name: "Git", level: 85, icon: <FaGitAlt aria-hidden="true" /> },
+      { name: "TypeScript", level: 65, icon: <SiTypescript aria-hidden="true" /> },
     ],
   },
-
   {
     title: "Backend Familiarity",
     skills: [
-      {
-        name: "Node.js",
-        level: 65,
-        icon: <FaNodeJs />,
-      },
-      {
-        name: "MongoDB",
-        level: 60,
-        icon: <SiMongodb />,
-      },
+      { name: "Node.js", level: 65, icon: <FaNodeJs aria-hidden="true" /> },
+      { name: "MongoDB", level: 60, icon: <SiMongodb aria-hidden="true" /> },
     ],
   },
 ];
@@ -88,37 +46,30 @@ const Skills = () => {
   return (
     <section
       id="skills"
+      aria-label="Technical Skills"
       className="py-28 relative overflow-hidden"
     >
       {/* Glow */}
-
-      <div className="absolute right-0 top-0 w-[500px] h-[500px] bg-purple-500/10 blur-[180px]" />
+      <div aria-hidden="true" className="absolute right-0 top-0 w-[500px] h-[500px] bg-purple-500/10 blur-[180px]" />
 
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
 
         {/* Heading */}
-
         <div className="text-center mb-20">
-
-          <span className="text-purple-400 font-medium">
-            MY SKILLS
-          </span>
+          <p className="text-purple-400 font-medium uppercase tracking-widest text-sm">
+            My Skills
+          </p>
 
           <h2 className="text-4xl md:text-5xl font-bold mt-4">
-
             Technologies I Use
             <span className="block bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent mt-2">
               To Build Modern Products
             </span>
-
           </h2>
-
         </div>
 
         {/* Skill Groups */}
-
         <div className="grid lg:grid-cols-3 gap-8">
-
           {skillGroups.map((group) => (
             <div
               key={group.title}
@@ -139,55 +90,36 @@ const Skills = () => {
               </h3>
 
               <div className="space-y-6">
-
                 {group.skills.map((skill) => (
                   <div key={skill.name}>
-
                     <div className="flex justify-between mb-2">
-
                       <div className="flex items-center gap-3">
-
                         <span className="text-xl text-purple-400">
                           {skill.icon}
                         </span>
-
-                        <span>
-                          {skill.name}
-                        </span>
-
+                        <span>{skill.name}</span>
                       </div>
-
-                      <span className="text-slate-400">
+                      <span className="text-slate-400" aria-hidden="true">
                         {skill.level}%
                       </span>
-
                     </div>
 
                     <div className="h-2 bg-slate-800 rounded-full overflow-hidden">
-
                       <div
-                        className="
-                          h-full
-                          rounded-full
-                          bg-gradient-to-r
-                          from-purple-500
-                          to-blue-500
-                        "
-                        style={{
-                          width: `${skill.level}%`,
-                        }}
+                        role="progressbar"
+                        aria-valuenow={skill.level}
+                        aria-valuemin={0}
+                        aria-valuemax={100}
+                        aria-label={`${skill.name} proficiency: ${skill.level}%`}
+                        className="h-full rounded-full bg-gradient-to-r from-purple-500 to-blue-500"
+                        style={{ width: `${skill.level}%` }}
                       />
-
                     </div>
-
                   </div>
                 ))}
-
               </div>
-
             </div>
           ))}
-
         </div>
 
       </div>

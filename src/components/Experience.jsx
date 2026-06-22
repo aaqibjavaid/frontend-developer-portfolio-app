@@ -13,7 +13,6 @@ const experiences = [
     ],
     tech: ["React.js", "JavaScript", "Tailwind CSS", "Axios"],
   },
-
   {
     company: "Iyrix Technologies",
     role: "Software Engineer",
@@ -26,99 +25,71 @@ const experiences = [
       "Worked on multiple client projects",
       "Improved website performance and responsiveness",
     ],
-    tech: ["HTML5", "CSS3", "JavaScript", "Bootstrap", "SEO",],
+    tech: ["HTML5", "CSS3", "JavaScript", "Bootstrap", "SEO"],
   },
   {
-  company: "Freddy's Moving Services",
-  role: "Frontend Developer",
-  period: "2022",
-  description:
-    "Developed a responsive business website from Figma designs, focusing on user experience, mobile responsiveness, and reusable UI components.",
-  achievements: [
-    "Converted Figma designs into pixel-perfect web pages",
-    "Built responsive layouts for desktop, tablet, and mobile devices",
-    "Created reusable UI components for maintainability",
-    "Improved website performance and user experience",
-  ],
-  tech: ["HTML5", "CSS3", "JavaScript", "Bootstrap", "Figma"],
-},
+    company: "Freddy's Moving Services",
+    role: "Frontend Developer",
+    period: "2022",
+    description:
+      "Developed a responsive business website from Figma designs, focusing on user experience, mobile responsiveness, and reusable UI components.",
+    achievements: [
+      "Converted Figma designs into pixel-perfect web pages",
+      "Built responsive layouts for desktop, tablet, and mobile devices",
+      "Created reusable UI components for maintainability",
+      "Improved website performance and user experience",
+    ],
+    tech: ["HTML5", "CSS3", "JavaScript", "Bootstrap", "Figma"],
+  },
 ];
 
 const Experience = () => {
   return (
     <section
       id="experience"
+      aria-label="Work Experience"
       className="relative py-28 overflow-hidden"
     >
       {/* Glow */}
-
-      <div className="absolute left-0 top-0 w-[500px] h-[500px] bg-blue-500/10 blur-[180px]" />
+      <div aria-hidden="true" className="absolute left-0 top-0 w-[500px] h-[500px] bg-blue-500/10 blur-[180px]" />
 
       <div className="max-w-6xl mx-auto px-6">
 
         {/* Heading */}
-
         <div className="text-center mb-20">
-
-          <span className="text-purple-400 font-medium">
-            EXPERIENCE
-          </span>
+          <p className="text-purple-400 font-medium uppercase tracking-widest text-sm">
+            Experience
+          </p>
 
           <h2 className="text-4xl md:text-5xl font-bold mt-4">
-
             My Professional
-
             <span className="block bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent mt-2">
               Journey
             </span>
-
           </h2>
-
         </div>
 
         {/* Timeline */}
-
-        <div className="relative">
+        <ol className="relative">
 
           {/* Center Line */}
-
-          <div className="hidden md:block absolute left-1/2 top-0 w-[2px] h-full bg-gradient-to-b from-purple-500 to-blue-500" />
+          <div aria-hidden="true" className="hidden md:block absolute left-1/2 top-0 w-[2px] h-full bg-gradient-to-b from-purple-500 to-blue-500" />
 
           {experiences.map((exp, index) => (
-
-            <div
+            <li
               key={exp.company}
               className={`relative mb-16 flex ${
-                index % 2 === 0
-                  ? "md:justify-start"
-                  : "md:justify-end"
+                index % 2 === 0 ? "md:justify-start" : "md:justify-end"
               }`}
             >
-
               {/* Dot */}
-
               <div
-                className="
-                  hidden
-                  md:block
-                  absolute
-                  left-1/2
-                  top-10
-                  -translate-x-1/2
-                  w-5
-                  h-5
-                  rounded-full
-                  bg-gradient-to-r
-                  from-purple-500
-                  to-blue-500
-                  border-4
-                  border-[#050816]
-                "
+                aria-hidden="true"
+                className="hidden md:block absolute left-1/2 top-10 -translate-x-1/2 w-5 h-5 rounded-full bg-gradient-to-r from-purple-500 to-blue-500 border-4 border-[#050816]"
               />
 
               {/* Card */}
-
-              <div
+              <article
                 className="
                   w-full
                   md:w-[45%]
@@ -133,10 +104,9 @@ const Experience = () => {
                   duration-300
                 "
               >
-
-                <span className="text-purple-400 text-sm">
+                <time className="text-purple-400 text-sm" dateTime={exp.period}>
                   {exp.period}
-                </span>
+                </time>
 
                 <h3 className="text-2xl font-bold mt-2">
                   {exp.company}
@@ -151,61 +121,36 @@ const Experience = () => {
                 </p>
 
                 {/* Achievements */}
-
                 <div className="mt-6">
-
                   <h5 className="font-semibold mb-3">
                     Highlights
                   </h5>
 
                   <ul className="space-y-2 text-slate-400">
-
                     {exp.achievements.map((item) => (
-                      <li
-                        key={item}
-                        className="flex gap-2"
-                      >
-                        <span className="text-purple-400">
-                          •
-                        </span>
-
+                      <li key={item} className="flex gap-2">
+                        <span aria-hidden="true" className="text-purple-400">•</span>
                         {item}
                       </li>
                     ))}
-
                   </ul>
-
                 </div>
 
                 {/* Tech Stack */}
-
-                <div className="flex flex-wrap gap-3 mt-6">
-
+                <div className="flex flex-wrap gap-3 mt-6" aria-label="Technologies used">
                   {exp.tech.map((tech) => (
                     <span
                       key={tech}
-                      className="
-                        px-3
-                        py-2
-                        rounded-full
-                        bg-slate-800
-                        border
-                        border-white/5
-                        text-sm
-                      "
+                      className="px-3 py-2 rounded-full bg-slate-800 border border-white/5 text-sm"
                     >
                       {tech}
                     </span>
                   ))}
-
                 </div>
-
-              </div>
-
-            </div>
+              </article>
+            </li>
           ))}
-
-        </div>
+        </ol>
 
       </div>
     </section>
